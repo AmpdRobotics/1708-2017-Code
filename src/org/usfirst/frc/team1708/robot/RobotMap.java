@@ -1,4 +1,8 @@
 package org.usfirst.frc.team1708.robot;
+
+import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -6,6 +10,12 @@ package org.usfirst.frc.team1708.robot;
  * floating around.
  */
 public class RobotMap {
+
+	public static SpeedController driveFrontLeftMotor = new Talon(0);
+	public static SpeedController driveRearLeftMotor = new Talon(1);
+	public static SpeedController driveFrontRightMotor = new Talon(2);
+	public static SpeedController driveRearRightMotor = new Talon(3);
+	
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
