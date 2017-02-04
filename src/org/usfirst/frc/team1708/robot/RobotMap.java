@@ -11,16 +11,17 @@ import edu.wpi.first.wpilibj.SpeedController;
  */
 
 public class RobotMap {
-	public static final int GRAY = 13;
-	public static final int PURPLE = 14;
-	public static final int WHITE = 11;
-	public static final int BLUE = 12;
-//	public static final int YELLOW = 
-//	public static final int ORANGE = 
-//	public static final int RED = 
-//	public static final int BLACK = 
-//	public static final int GREEN = 
-//	public static final int BROWN = 
+	public static final int GRAY = 13; //CAN, currently broken
+	public static final int PURPLE = 14; //CAN
+	public static final int WHITE = 11; //CAN
+	public static final int BLUE = 12; //CAN
+	
+	public static final int YELLOW = 5; //PWM 
+	public static final int ORANGE = 7; //PWM
+	public static final int RED = 6; //PWM
+	//public static final int BLACK = RSL
+	public static final int GREEN = 8; //PWM
+	public static final int BROWN = 9; //PWM
 	public static SpeedController driveFrontLeftMotor = new CANTalon(PURPLE);
 	public static SpeedController driveRearLeftMotor = new CANTalon(BLUE);
 	public static SpeedController driveFrontRightMotor = new CANTalon(GRAY);
