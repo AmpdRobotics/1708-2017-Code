@@ -9,12 +9,22 @@ import edu.wpi.first.wpilibj.SpeedController;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap {
 
-	public static SpeedController driveFrontLeftMotor = new CANTalon(11);
-	public static SpeedController driveRearLeftMotor = new CANTalon(12);
-	public static SpeedController driveFrontRightMotor = new CANTalon(13);
-	public static SpeedController driveRearRightMotor = new CANTalon(14);
+public class RobotMap {
+	public static final int GRAY = 13;
+	public static final int PURPLE = 14;
+	public static final int WHITE = 11;
+	public static final int BLUE = 12;
+//	public static final int YELLOW = 
+//	public static final int ORANGE = 
+//	public static final int RED = 
+//	public static final int BLACK = 
+//	public static final int GREEN = 
+//	public static final int BROWN = 
+	public static SpeedController driveFrontLeftMotor = new CANTalon(PURPLE);
+	public static SpeedController driveRearLeftMotor = new CANTalon(BLUE);
+	public static SpeedController driveFrontRightMotor = new CANTalon(GRAY);
+	public static SpeedController driveRearRightMotor = new CANTalon(WHITE);
 	
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
