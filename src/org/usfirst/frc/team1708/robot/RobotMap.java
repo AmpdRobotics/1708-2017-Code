@@ -3,6 +3,7 @@ package org.usfirst.frc.team1708.robot;
 import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -26,7 +27,7 @@ public class RobotMap {
 	public static SpeedController driveRearLeftMotor = new CANTalon(BLUE);
 	public static SpeedController driveFrontRightMotor = new CANTalon(GRAY);
 	public static SpeedController driveRearRightMotor = new CANTalon(WHITE);
-	
+	public static SpeedController robotIntake = new Talon(YELLOW);
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
