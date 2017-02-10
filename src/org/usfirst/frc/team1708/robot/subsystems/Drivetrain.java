@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Drivetrain extends Subsystem {
 	RobotDrive robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
 			RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
-// hi jason
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {

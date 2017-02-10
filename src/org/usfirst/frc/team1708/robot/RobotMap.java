@@ -1,8 +1,11 @@
 package org.usfirst.frc.team1708.robot;
 
+import java.util.Vector;
 import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.VictorSP;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -22,11 +25,12 @@ public class RobotMap {
 	//public static final int BLACK = RSL
 	public static final int GREEN = 8; //PWM
 	public static final int BROWN = 9; //PWM
-	public static SpeedController driveFrontLeftMotor = new CANTalon(PURPLE);
-	public static SpeedController driveRearLeftMotor = new CANTalon(BLUE);
-	public static SpeedController driveFrontRightMotor = new CANTalon(GRAY);
-	public static SpeedController driveRearRightMotor = new CANTalon(WHITE);
+	public static SpeedController driveFrontLeftMotor = new VictorSP(YELLOW);
+	public static SpeedController driveRearLeftMotor = new VictorSP(RED);
+	public static SpeedController driveFrontRightMotor = new VictorSP (ORANGE);
+	public static SpeedController driveRearRightMotor = new VictorSP (GREEN);
 	
+	//public static SpeedController elevatorMotor = new Talon(RED);
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
