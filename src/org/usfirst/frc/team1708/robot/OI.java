@@ -26,8 +26,8 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	Button intake = new JoystickButton(joystickMech, 4);
-	Button outtake = new JoystickButton(joystickMech, 5);
+	Button intake = new JoystickButton(joystickMech, 5);
+	Button outtake = new JoystickButton(joystickMech, 6);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
