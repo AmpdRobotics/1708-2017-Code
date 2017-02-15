@@ -3,7 +3,9 @@ package org.usfirst.frc.team1708.robot;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
+import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
+import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -53,8 +55,8 @@ public class OI {
 		// command
 		// until it is finished as determined by it's isFinished method.
 		// button.whenReleased(new ExampleCommand());
-		shiftGearHigh.whenPressed(new ShiftHighGear());
-		shiftGearDown.whenPressed(new ShiftLowGear());
+		shiftGearHigh.whenPressed(new ShiftHighDrive());
+		shiftGearDown.whenPressed(new ShiftLowDrive());
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());

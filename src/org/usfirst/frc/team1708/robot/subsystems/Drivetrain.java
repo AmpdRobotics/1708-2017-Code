@@ -22,13 +22,23 @@ public class Drivetrain extends Subsystem {
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 	}
-	
-		public void gearShiftHigh() {
-			RobotMap.gearShifter.set(DoubleSolenoid.Value.kForward);
-		}
-		public void gearShiftLow() {
-			RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
-		}
+
+	public void gearShiftHigh() {
+		RobotMap.gearShifter.set(DoubleSolenoid.Value.kForward);
+	}
+
+	public boolean inHighGear() {
+		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kForward;
+	}
+
+	public boolean inLowGear() {
+		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kReverse;
+	}
+
+	public void gearShiftLow() {
+		RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
+	}
+
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {
