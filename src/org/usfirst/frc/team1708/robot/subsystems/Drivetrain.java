@@ -11,12 +11,22 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Drivetrain extends Subsystem {
-	RobotDrive robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
-			RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
+	RobotDrive robotDrive;
+
+	public Drivetrain() {
+
+		robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
+				RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+	}
+
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {
-		robotDrive.arcadeDrive(move, Joystick.AxisType.kY.value, move, Joystick.AxisType.kZ.value, true);
+		robotDrive.arcadeDrive(move.getY(), -move.getZ(), true);
 	}
 
 	public void initDefaultCommand() {
