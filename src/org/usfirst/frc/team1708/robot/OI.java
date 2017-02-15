@@ -3,6 +3,7 @@ package org.usfirst.frc.team1708.robot;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
+import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -28,6 +29,7 @@ public class OI {
 	public Joystick joystickMech = new Joystick(1);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
+	Button shootHigh = new JoystickButton(joystickMech, 1);
 
 	public OI() {
 
@@ -54,5 +56,9 @@ public class OI {
 
 		elevatorDown.whileHeld(new ElevatorDown());
 		elevatorDown.whenReleased(new ElevatorOff());
+
+		shootHigh.whileHeld(new ShootHigh());
+
 	}
 }
+   rw
