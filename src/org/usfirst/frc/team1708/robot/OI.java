@@ -26,8 +26,8 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	//Button elevatorUp = new JoystickButton(joystickMech, 6);
-	//Button elevatorDown = new JoystickButton(joystickMech, 7);
+	Button elevatorUp = new JoystickButton(joystickMech, 7);
+	Button elevatorDown = new JoystickButton(joystickMech, 8);
 
 	public OI() {
 
@@ -49,10 +49,10 @@ public class OI {
 		// command
 		// until it is finished as determined by it's isFinished method.
 		// button.whenReleased(new ExampleCommand())
-		//elevatorUp.whileHeld(new ElevatorUp());
-		//elevatorUp.whenReleased(new ElevatorOff());
+		elevatorUp.whileHeld(new ElevatorUp());
+		elevatorUp.whenReleased(new ElevatorOff());
 
-		//elevatorDown.whileHeld(new ElevatorDown());
-		//elevatorDown.whenReleased(new ElevatorOff());
+		elevatorDown.whileHeld(new ElevatorDown());
+		elevatorDown.whenReleased(new ElevatorOff());
 	}
 }
