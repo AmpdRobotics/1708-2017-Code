@@ -1,5 +1,8 @@
 package org.usfirst.frc.team1708.robot;
 
+import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
+import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
+import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
 
@@ -27,9 +30,12 @@ public class OI {
 	public Joystick joystickMech = new Joystick(1);
 	public Button shiftGearHigh = new JoystickButton(joystickDrive, 4);
 	public Button shiftGearDown = new JoystickButton(joystickDrive, 3);
+	public Button intake = new JoystickButton(joystickMech, 5);
+	public Button outtake = new JoystickButton(joystickMech, 6);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
+
 		// Once you have a button, it's trivial to bind it to a button in one of
 		// three ways:
 
@@ -49,5 +55,11 @@ public class OI {
 		// button.whenReleased(new ExampleCommand());
 		shiftGearHigh.whenPressed(new ShiftHighGear());
 		shiftGearDown.whenPressed(new ShiftLowGear());
+
+		intake.whileHeld(new IntakeCommand());
+		intake.whenReleased(new IntakeOffCommand());
+		
+		outtake.whileHeld(new OuttakeCommand());
+		outtake.whenReleased(new IntakeOffCommand());
 	}
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+}

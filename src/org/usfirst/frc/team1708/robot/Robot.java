@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team1708.robot.subsystems.Intake;
+
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -18,6 +20,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain = new Drivetrain();
+	public static Intake intake = new Intake();
 	public static OI oi;
 
 	Command autonomousCommand;

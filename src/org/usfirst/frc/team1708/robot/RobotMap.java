@@ -5,6 +5,7 @@ import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -13,21 +14,23 @@ import edu.wpi.first.wpilibj.VictorSP;
  */
 
 public class RobotMap {
-	public static final int GRAY = 13; //CAN, currently broken
-	public static final int PURPLE = 14; //CAN
-	public static final int WHITE = 11; //CAN
-	public static final int BLUE = 12; //CAN
-	
-	public static final int YELLOW = 5; //PWM 
-	public static final int ORANGE = 7; //PWM
-	public static final int RED = 6; //PWM
-	//public static final int BLACK = RSL
-	public static final int GREEN = 8; //PWM
-	public static final int BROWN = 9; //PWM
+	public static final int GRAY = 13; // CAN, currently broken
+	public static final int PURPLE = 14; // CAN
+	public static final int WHITE = 11; // CAN
+	public static final int BLUE = 12; // CAN
+
+	public static final int YELLOW = 5; // PWM
+	public static final int ORANGE = 7; // PWM
+	public static final int RED = 6; // PWM
+	// public static final int BLACK = RSL
+	public static final int GREEN = 8; // PWM
+	public static final int BROWN = 9; // PWM
 	public static SpeedController driveFrontLeftMotor = new VictorSP(GREEN);
 	public static SpeedController driveRearLeftMotor = new VictorSP(RED);
 	public static SpeedController driveFrontRightMotor = new VictorSP(ORANGE);
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
+
+	public static SpeedController robotIntake = new CANTalon(BLUE);
 	
 	public static DoubleSolenoid gearShifter = new DoubleSolenoid(6,7);
     // For example to map the left and right motors, you could define the
