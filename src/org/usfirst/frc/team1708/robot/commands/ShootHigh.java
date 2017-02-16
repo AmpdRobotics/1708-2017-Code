@@ -21,7 +21,7 @@ public class ShootHigh extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.shooter.setShooterSpeed(.625);
+		Robot.shooter.setShooterSpeed(-.625);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
