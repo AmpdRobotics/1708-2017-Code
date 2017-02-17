@@ -4,6 +4,8 @@ ehthumbs.db
 
 # Eclipse files
 bin/
+build/
+dist/
 .project
 .classpath
 
