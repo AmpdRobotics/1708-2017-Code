@@ -2,6 +2,8 @@ package org.usfirst.frc.team1708.robot;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 
@@ -36,6 +38,8 @@ public class RobotMap {
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
 	public static SpeedController shooterMotor = new CANTalon(PURPLE);
+	
+	public static AnalogInput shootSpeedEncoder = new AnalogInput(1);
 	
 	
 	// For example to map the left and right motors, you could define the
