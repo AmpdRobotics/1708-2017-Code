@@ -1,5 +1,8 @@
 package org.usfirst.frc.team1708.robot;
 
+import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
+import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
+import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
@@ -28,6 +31,8 @@ public class OI {
 	public Joystick joystickMech = new Joystick(1);
 	Button intake = new JoystickButton(joystickMech, 5);
 	Button outtake = new JoystickButton(joystickMech, 6);
+	Button elevatorUp = new JoystickButton(joystickMech, 7);
+	Button elevatorDown = new JoystickButton(joystickMech, 8);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
@@ -49,6 +54,12 @@ public class OI {
 		// command
 		// until it is finished as determined by it's isFinished method.
 		// button.whenReleased(new ExampleCommand());
+		elevatorUp.whileHeld(new ElevatorUp());
+		elevatorUp.whenReleased(new ElevatorOff());
+
+		elevatorDown.whileHeld(new ElevatorDown());
+		elevatorDown.whenReleased(new ElevatorOff());
+
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());
 		

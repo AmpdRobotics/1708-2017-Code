@@ -28,7 +28,10 @@ public class RobotMap {
 	public static SpeedController driveRearLeftMotor = new VictorSP(RED);
 	public static SpeedController driveFrontRightMotor = new VictorSP(ORANGE);
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
+
 	public static SpeedController robotIntake = new CANTalon(BLUE);
+	
+	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
