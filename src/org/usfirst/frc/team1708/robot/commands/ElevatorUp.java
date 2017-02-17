@@ -17,6 +17,7 @@ public class ElevatorUp extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	System.out.println("elevator on");
     }
 
     // Called repeatedly when this Command is scheduled to run

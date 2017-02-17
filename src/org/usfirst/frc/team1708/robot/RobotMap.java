@@ -17,7 +17,7 @@ public class RobotMap {
 	public static final int PURPLE = 14; // CAN
 	public static final int WHITE = 11; // CAN
 	public static final int BLUE = 12; // CAN
-
+	
 	public static final int YELLOW = 5; // PWM
 	public static final int ORANGE = 7; // PWM
 	public static final int RED = 6; // PWM
@@ -29,11 +29,15 @@ public class RobotMap {
 	public static SpeedController driveFrontRightMotor = new VictorSP(ORANGE);
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
 
+	public static final double HIGH_SHOT_SPEED = -.625;
+	
 	public static SpeedController robotIntake = new CANTalon(BLUE);
 	
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
 	public static SpeedController shooterMotor = new CANTalon(PURPLE);
+	
+	
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
