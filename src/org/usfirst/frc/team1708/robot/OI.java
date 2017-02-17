@@ -6,6 +6,7 @@ import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
+import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -33,6 +34,7 @@ public class OI {
 	Button outtake = new JoystickButton(joystickMech, 6);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
+	Button shootHigh = new JoystickButton(joystickMech, 1);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
@@ -59,6 +61,8 @@ public class OI {
 
 		elevatorDown.whileHeld(new ElevatorDown());
 		elevatorDown.whenReleased(new ElevatorOff());
+
+		shootHigh.whileHeld(new ShootHigh());
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());
