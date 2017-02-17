@@ -7,6 +7,7 @@ import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
+import org.usfirst.frc.team1708.robot.commands.ShootWithElevator;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -62,11 +63,11 @@ public class OI {
 		elevatorDown.whileHeld(new ElevatorDown());
 		elevatorDown.whenReleased(new ElevatorOff());
 
-		shootHigh.whileHeld(new ShootHigh());
+		shootHigh.whileHeld(new ShootWithElevator());
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());
-		
+
 		outtake.whileHeld(new OuttakeCommand());
 		outtake.whenReleased(new IntakeOffCommand());
 	}
