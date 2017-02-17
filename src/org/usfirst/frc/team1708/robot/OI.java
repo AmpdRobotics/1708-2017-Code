@@ -3,6 +3,9 @@ package org.usfirst.frc.team1708.robot;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
+import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
+import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
+import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -27,13 +30,15 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
+	Button intake = new JoystickButton(joystickMech, 5);
+	Button outtake = new JoystickButton(joystickMech, 6);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
 
 	public OI() {
-
 		//// TRIGGERING COMMANDS WITH BUTTONS
+
 		// Once you have a button, it's trivial to bind it to a button in one of
 		// three ways:
 
@@ -50,7 +55,7 @@ public class OI {
 		// Start the command when the button is released and let it run the
 		// command
 		// until it is finished as determined by it's isFinished method.
-		// button.whenReleased(new ExampleCommand())
+		// button.whenReleased(new ExampleCommand());
 		elevatorUp.whileHeld(new ElevatorUp());
 		elevatorUp.whenReleased(new ElevatorOff());
 
@@ -59,5 +64,10 @@ public class OI {
 
 		shootHigh.whileHeld(new ShootHigh());
 
+		intake.whileHeld(new IntakeCommand());
+		intake.whenReleased(new IntakeOffCommand());
+		
+		outtake.whileHeld(new OuttakeCommand());
+		outtake.whenReleased(new IntakeOffCommand());
 	}
 }
