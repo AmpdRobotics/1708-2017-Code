@@ -32,7 +32,7 @@ public class RobotMap {
 
 	public static SpeedController robotIntake = new CANTalon(BLUE);
 
-	public static DoubleSolenoid gearShifter = new DoubleSolenoid(6, 7);
+	public static DoubleSolenoid gearShifter = new DoubleSolenoid(4, 6);
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;

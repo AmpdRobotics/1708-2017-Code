@@ -8,8 +8,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class ShiftLowDrive extends CommandGroup {
 
 	public ShiftLowDrive() {
-		addParallel(new ShiftLowGear());
-		addParallel(new JoystickDrive());
+		System.out.println("ShiftLowDrive");
+		addSequential(new ShiftLowGear());
+		addSequential(new JoystickDrive());
 		// Add Commands here:
 		// e.g. addSequential(new Command1());
 		// addSequential(new Command2());

@@ -8,8 +8,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class ShiftHighDrive extends CommandGroup {
 
 	public ShiftHighDrive() {
-		addParallel(new ShiftHighGear());
-		addParallel(new JoystickDrive());
+		System.out.println("ShiftHighDrive");
+		addSequential(new ShiftHighGear());
+		addSequential(new JoystickDrive());
 		// Add Commands here:
 		// e.g. addSequential(new Command1());
 		// addSequential(new Command2());
