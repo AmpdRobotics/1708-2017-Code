@@ -3,6 +3,7 @@ package org.usfirst.frc.team1708.robot;
 import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -19,7 +20,7 @@ public class RobotMap {
 	public static final int PURPLE = 14; // CAN
 	public static final int WHITE = 11; // CAN
 	public static final int BLUE = 12; // CAN
-	
+
 	public static final int YELLOW = 5; // PWM
 	public static final int ORANGE = 7; // PWM
 	public static final int RED = 6; // PWM
@@ -32,16 +33,17 @@ public class RobotMap {
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
 
 	public static final double HIGH_SHOT_SPEED = -.625;
-	
+
 	public static SpeedController robotIntake = new CANTalon(BLUE);
 	
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
 	public static SpeedController shooterMotor = new CANTalon(PURPLE);
-	
+
 	public static AnalogInput shootSpeedEncoder = new AnalogInput(1);
-	
-	
+
+	public static DoubleSolenoid gearShifter = new DoubleSolenoid(4, 6);
+
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
