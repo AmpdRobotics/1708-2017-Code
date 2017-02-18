@@ -31,6 +31,10 @@ public class RobotMap {
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
 
 	public static SpeedController robotIntake = new CANTalon(BLUE);
+	
+	public static SpeedController elevatorMotor = new CANTalon(WHITE);
+
+	public static SpeedController shooterMotor = new CANTalon(PURPLE);
 
 	public static DoubleSolenoid gearShifter = new DoubleSolenoid(4, 6);
 	// For example to map the left and right motors, you could define the

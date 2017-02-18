@@ -1,5 +1,8 @@
 package org.usfirst.frc.team1708.robot;
 
+import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
+import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
+import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
@@ -7,6 +10,7 @@ import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
+import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -30,10 +34,13 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	public Button shiftGearHigh = new JoystickButton(joystickDrive, 4);
-	public Button shiftGearDown = new JoystickButton(joystickDrive, 3);
-	public Button intake = new JoystickButton(joystickMech, 5);
-	public Button outtake = new JoystickButton(joystickMech, 6);
+	Button shiftGearHigh = new JoystickButton(joystickDrive, 4);
+	Button shiftGearDown = new JoystickButton(joystickDrive, 3);
+	Button intake = new JoystickButton(joystickMech, 5);
+	Button outtake = new JoystickButton(joystickMech, 6);
+	Button elevatorUp = new JoystickButton(joystickMech, 7);
+	Button elevatorDown = new JoystickButton(joystickMech, 8);
+	Button shootHigh = new JoystickButton(joystickMech, 1);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
@@ -57,6 +64,14 @@ public class OI {
 		// button.whenReleased(new ExampleCommand());
 		shiftGearHigh.whenPressed(new ShiftHighDrive());
 		shiftGearDown.whenPressed(new ShiftLowDrive());
+
+		elevatorUp.whileHeld(new ElevatorUp());
+		elevatorUp.whenReleased(new ElevatorOff());
+
+		elevatorDown.whileHeld(new ElevatorDown());
+		elevatorDown.whenReleased(new ElevatorOff());
+
+		shootHigh.whileHeld(new ShootHigh());
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());
