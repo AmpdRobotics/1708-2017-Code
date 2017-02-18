@@ -75,7 +75,7 @@ public class OI {
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());
-		
+
 		outtake.whileHeld(new OuttakeCommand());
 		outtake.whenReleased(new IntakeOffCommand());
 	}
