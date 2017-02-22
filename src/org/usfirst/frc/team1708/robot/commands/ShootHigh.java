@@ -23,7 +23,7 @@ public class ShootHigh extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		System.out.println("EncoderSpeed" + RobotMap.shootSpeedEncoder.getValue());
+		System.out.println("EncoderSpeed" + Robot.shooter.getShooterSpeed());
 		Robot.shooter.setShooterSpeed(RobotMap.HIGH_SHOT_SPEED);
 	}
 

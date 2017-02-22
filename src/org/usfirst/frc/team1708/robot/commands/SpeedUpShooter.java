@@ -28,7 +28,7 @@ public class SpeedUpShooter extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		Robot.shooter.setShooterSpeed(RobotMap.HIGH_SHOT_SPEED);
-		System.out.println("shooter speed" + Robot.shooter.getShotSpeed());
+		System.out.println("shooter speed" + Robot.shooter.getShooterSpeed());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
