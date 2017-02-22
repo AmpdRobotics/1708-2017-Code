@@ -39,8 +39,8 @@ public class OI {
 	Button shiftGearDown = new JoystickButton(joystickDrive, 3);
 	Button intake = new JoystickButton(joystickMech, 5);
 	Button outtake = new JoystickButton(joystickMech, 6);
-	Button elevatorUp = new JoystickButton(joystickMech, 7);
-	Button elevatorDown = new JoystickButton(joystickMech, 8);
+	Button elevatorUp = new JoystickButton(joystickMech, 8);
+	Button elevatorDown = new JoystickButton(joystickMech, 7);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
 
 	public OI() {
