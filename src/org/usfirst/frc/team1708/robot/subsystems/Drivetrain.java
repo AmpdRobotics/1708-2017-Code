@@ -44,8 +44,8 @@ public class Drivetrain extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {
-		robotDrive.arcadeDrive(move.getY(), move.getZ(), true); //competition bot
-		//robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
+		//robotDrive.arcadeDrive(move.getY(), move.getZ(), true); //competition bot
+		robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
 	}
 
 	public void initDefaultCommand() {
