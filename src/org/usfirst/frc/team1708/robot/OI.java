@@ -72,7 +72,7 @@ public class OI {
 		elevatorDown.whileHeld(new ElevatorDown());
 		elevatorDown.whenReleased(new ElevatorOff());
 
-		shootHigh.whileHeld(new ShootWithElevator());
+		shootHigh.whileHeld(new ShootHigh());
 
 		intake.whileHeld(new IntakeCommand());
 		intake.whenReleased(new IntakeOffCommand());

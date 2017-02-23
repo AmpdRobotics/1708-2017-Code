@@ -11,18 +11,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ShooterSub extends Subsystem {
 	public ShooterSub() {
-		// RobotMap.hallEffectSensorShooter.setMaxPeriod(.1);
-		// RobotMap.hallEffectSensorShooter.setUpdateWhenEmpty(true);
-		// RobotMap.hallEffectSensorShooter.setSamplesToAverage(10);
+		RobotMap.hallEffectSensorShooter.setMaxPeriod(.1);
+		RobotMap.hallEffectSensorShooter.setUpdateWhenEmpty(true);
+		RobotMap.hallEffectSensorShooter.setSamplesToAverage(10);
 
 	}
 
 	public void setShooterSpeed(double value) {
+		System.out.println("Shooter Speed" + getShooterSpeed());
 		RobotMap.shooterMotor.set(value);
 	}
 
 	public double getShooterSpeed() {
-		return RobotMap.hallEffectSensorShooter.getRate();
+		return RobotMap.hallEffectSensorShooter.getPeriod();
 	}
 
 	public void resetCounter() {
