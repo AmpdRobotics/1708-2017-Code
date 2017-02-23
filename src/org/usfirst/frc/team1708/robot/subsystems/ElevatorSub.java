@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ElevatorSub extends Subsystem {
 	public void ballUp() {
-		RobotMap.elevatorMotor.set(-.75);
+		RobotMap.elevatorMotor.set(-.5);
 	}
 
 	public void ballDown() {

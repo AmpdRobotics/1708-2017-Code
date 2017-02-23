@@ -34,10 +34,10 @@ public class RobotMap {
 	public static SpeedController driveFrontRightMotor = new VictorSP(ORANGE);
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
 
-	public static final double HIGH_SHOT_SPEED = -.625;
+	public static final double HIGH_SHOT_SPEED = -.5;
 
 	public static SpeedController robotIntake = new CANTalon(BLUE);
-	
+
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
 	public static SpeedController shooterMotor = new CANTalon(PURPLE);

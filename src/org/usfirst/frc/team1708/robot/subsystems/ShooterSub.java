@@ -18,7 +18,9 @@ public class ShooterSub extends Subsystem {
 	}
 
 	public void setShooterSpeed(double value) {
-		System.out.println("Shooter Speed" + getShooterSpeed());
+		if (!RobotMap.hallEffectSensorShooter.getStopped()) {
+			System.out.println("Shooter Speed" + getShooterSpeed());
+		}
 		RobotMap.shooterMotor.set(value);
 	}
 
