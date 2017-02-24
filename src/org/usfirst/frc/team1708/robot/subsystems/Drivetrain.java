@@ -40,6 +40,9 @@ public class Drivetrain extends Subsystem {
 	public void gearShiftLow() {
 		RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
 	}
+	public void drive(double move, double turn) {
+		robotDrive.arcadeDrive(move, turn);
+	}
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
