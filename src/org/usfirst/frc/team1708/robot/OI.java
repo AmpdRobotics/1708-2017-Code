@@ -6,6 +6,7 @@ import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
+import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
@@ -65,7 +66,7 @@ public class OI {
 		shiftGearHigh.whenPressed(new ShiftHighDrive());
 		shiftGearDown.whenPressed(new ShiftLowDrive());
 
-		elevatorUp.whileHeld(new ElevatorUp());
+		elevatorUp.whileHeld(new RunAndPauseElevator());
 		elevatorUp.whenReleased(new ElevatorOff());
 
 		elevatorDown.whileHeld(new ElevatorDown());

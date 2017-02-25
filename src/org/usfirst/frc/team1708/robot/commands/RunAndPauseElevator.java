@@ -5,9 +5,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class PauseAndStopElevator extends CommandGroup {
+public class RunAndPauseElevator extends CommandGroup {
 
-    public PauseAndStopElevator() {
+    public RunAndPauseElevator() {
     	addSequential(new PauseElevator());
     	addSequential(new ElevatorStop());
         // Add Commands here:
