@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1708.robot;
 
+import org.usfirst.frc.team1708.robot.commands.Climb;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
@@ -41,6 +42,7 @@ public class OI {
 	Button elevatorUp = new JoystickButton(joystickMech, 8);
 	Button elevatorDown = new JoystickButton(joystickMech, 7);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
+	Button climberUp = new JoystickButton(joystickMech, 4);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
@@ -78,5 +80,6 @@ public class OI {
 
 		outtake.whileHeld(new OuttakeCommand());
 		outtake.whenReleased(new IntakeOffCommand());
+		climberUp.whileHeld(new Climb());
 	}
 }
