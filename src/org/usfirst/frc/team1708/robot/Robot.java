@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
 import org.usfirst.frc.team1708.robot.subsystems.Intake;
@@ -26,6 +28,7 @@ public class Robot extends IterativeRobot {
 	public static ElevatorSub elevator = new ElevatorSub();
 	public static Intake intake = new Intake();
 	public static ShooterSub shooter = new ShooterSub();
+	public static ClimberSub climber = new ClimberSub();
 	public static OI oi;
 
 	Command autonomousCommand;
