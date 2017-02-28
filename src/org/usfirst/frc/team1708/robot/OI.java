@@ -3,17 +3,13 @@ package org.usfirst.frc.team1708.robot;
 import org.usfirst.frc.team1708.robot.commands.Climb;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
-import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
-import org.usfirst.frc.team1708.robot.commands.ShootWithElevator;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
