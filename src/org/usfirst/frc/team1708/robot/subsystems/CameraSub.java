@@ -1,22 +1,12 @@
 package org.usfirst.frc.team1708.robot.subsystems;
 
-import org.usfirst.frc.team1708.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
-public class ElevatorSub extends Subsystem {
-	public void ballUp() {
-		RobotMap.elevatorMotor.set(.5);
-	}
-    public void ballDown() {
-    	RobotMap.elevatorMotor.set(-.5);
-    }
-    public void elevatorOff() {
-    	RobotMap.elevatorMotor.set(0);
-    }
+public class CameraSub extends Subsystem {
+
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 

@@ -41,6 +41,8 @@ public class RobotMap {
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
 	public static SpeedController shooterMotor = new CANTalon(PURPLE);
+	
+	public static SpeedController climberMotor = new VictorSP(BROWN);
 
 	public static AnalogInput shootSpeedEncoder = new AnalogInput(1);
 
