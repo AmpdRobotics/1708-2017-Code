@@ -17,12 +17,13 @@ public class ShotWithJoystick extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		Robot.shooter.setShooterSpeed(Robot.oi.joystickMech.getY());
-		System.out.println(Robot.oi.joystickMech.getY());
+		//System.out.println("joystick shot speed" + Robot.oi.joystickMech.getY());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

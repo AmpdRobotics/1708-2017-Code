@@ -7,6 +7,7 @@ import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
+import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
@@ -39,10 +40,10 @@ public class OI {
 	Button shiftGearDown = new JoystickButton(joystickDrive, 3);
 	Button intake = new JoystickButton(joystickMech, 5);
 	Button outtake = new JoystickButton(joystickMech, 6);
-	Button elevatorUp = new JoystickButton(joystickMech, 8);
-	Button elevatorDown = new JoystickButton(joystickMech, 7);
+	Button elevatorUp = new JoystickButton(joystickMech, 7);
+	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
-	Button climberUp = new JoystickButton(joystickMech, 4);
+	Button climber = new JoystickButton(joystickDrive, 1);
 
 	public OI() {
 		//// TRIGGERING COMMANDS WITH BUTTONS
@@ -67,7 +68,7 @@ public class OI {
 		shiftGearHigh.whenPressed(new ShiftHighDrive());
 		shiftGearDown.whenPressed(new ShiftLowDrive());
 
-		elevatorUp.whileHeld(new ElevatorUp());
+		elevatorUp.whileHeld(new RunAndPauseElevator());
 		elevatorUp.whenReleased(new ElevatorOff());
 
 		elevatorDown.whileHeld(new ElevatorDown());
@@ -80,6 +81,7 @@ public class OI {
 
 		outtake.whileHeld(new OuttakeCommand());
 		outtake.whenReleased(new IntakeOffCommand());
-		climberUp.whileHeld(new Climb());
+		
+		climber.whileHeld(new Climb());
 	}
 }
