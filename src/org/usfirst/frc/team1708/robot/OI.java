@@ -36,8 +36,8 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	Button shiftGearHigh = new JoystickButton(joystickDrive, 4);
-	Button shiftGearDown = new JoystickButton(joystickDrive, 3);
+	Button shiftGearHigh = new JoystickButton(joystickDrive, 3);
+	Button shiftGearDown = new JoystickButton(joystickDrive, 4);
 	Button intake = new JoystickButton(joystickMech, 5);
 	Button outtake = new JoystickButton(joystickMech, 6);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);

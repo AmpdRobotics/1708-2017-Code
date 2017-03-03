@@ -3,6 +3,7 @@ package org.usfirst.frc.team1708.robot.subsystems;
 import org.usfirst.frc.team1708.robot.RobotMap;
 import org.usfirst.frc.team1708.robot.commands.JoystickDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
+import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
@@ -25,19 +26,19 @@ public class Drivetrain extends Subsystem {
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 	}
 
-	public void gearShiftHigh() {
+	public void gearShiftLow() {
 		RobotMap.gearShifter.set(DoubleSolenoid.Value.kForward);
 	}
 
-	public boolean inHighGear() {
+	public boolean inLowGear() {
 		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kForward;
 	}
 
-	public boolean inLowGear() {
+	public boolean inHighGear() {
 		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kReverse;
 	}
 
-	public void gearShiftLow() {
+	public void gearShiftHigh() {
 		RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
 	}
 	public void drive(double move, double turn) {
