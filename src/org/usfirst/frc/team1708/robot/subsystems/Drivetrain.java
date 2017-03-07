@@ -44,12 +44,13 @@ public class Drivetrain extends Subsystem {
 	public void drive(double move, double turn) {
 		robotDrive.arcadeDrive(move, turn);
 	}
+	public void encoderLeft
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {
-		robotDrive.arcadeDrive(move.getY(), move.getZ(), true); //competition bot
-		//robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
+		//robotDrive.arcadeDrive(move.getY(), move.getZ(), true); //competition bot
+		robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
 	}
 
 	public void initDefaultCommand() {

@@ -49,6 +49,10 @@ public class RobotMap {
 	public static DoubleSolenoid gearShifter = new DoubleSolenoid(4, 6);
 
 	public static GearTooth hallEffectSensorShooter = new GearTooth(1);
+	
+	public static AnalogInput leftDriveEncoder = new AnalogInput(0);
+	
+	public static AnalogInput rightDriveEncoder = new AnalogInput(2);
 
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
