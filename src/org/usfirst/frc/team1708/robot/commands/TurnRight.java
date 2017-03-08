@@ -1,17 +1,13 @@
 package org.usfirst.frc.team1708.robot.commands;
 
-import org.usfirst.frc.team1708.robot.Robot;
-import org.usfirst.frc.team1708.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class RightDriveEncoder extends Command {
+public class TurnRight extends Command {
 
-    public RightDriveEncoder() {
-    	requires(Robot.drivetrain);
+    public TurnRight() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }

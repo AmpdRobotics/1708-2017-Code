@@ -6,9 +6,13 @@ import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -17,13 +21,16 @@ public class Drivetrain extends Subsystem {
 	RobotDrive robotDrive;
 
 	public Drivetrain() {
-
+		
+		
 		robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
 				RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		
+
 	}
 
 	public void gearShiftLow() {
@@ -44,8 +51,13 @@ public class Drivetrain extends Subsystem {
 	public void drive(double move, double turn) {
 		robotDrive.arcadeDrive(move, turn);
 	}
-	public void encoderLeft
-
+//	public void encoderLeft() {
+	//	RobotMap.leftDriveEncoder.get();
+	//}
+//	public void encoderRight(double rightValue) {
+//		RobotMap.rightDriveEncoder.get();
+//	}
+	
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public void joystickDrive(Joystick move) {
@@ -55,6 +67,7 @@ public class Drivetrain extends Subsystem {
 
 	public void initDefaultCommand() {
 		setDefaultCommand(new ShiftHighDrive());
+		
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
 	}

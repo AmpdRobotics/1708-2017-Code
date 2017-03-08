@@ -14,7 +14,9 @@ import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -44,8 +46,10 @@ public class OI {
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
 	Button climber = new JoystickButton(joystickDrive, 1);
+	
 
 	public OI() {
+
 		//// TRIGGERING COMMANDS WITH BUTTONS
 
 		// Once you have a button, it's trivial to bind it to a button in one of
@@ -83,5 +87,7 @@ public class OI {
 		outtake.whenReleased(new IntakeOffCommand());
 		
 		climber.whileHeld(new Climb());
+		
+
 	}
 }

@@ -4,11 +4,13 @@ import com.ctre.CANTalon;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GearTooth;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -50,9 +52,15 @@ public class RobotMap {
 
 	public static GearTooth hallEffectSensorShooter = new GearTooth(1);
 	
-	public static AnalogInput leftDriveEncoder = new AnalogInput(0);
+	public static DigitalInput leftDriveEncoder = new DigitalInput(8);
 	
-	public static AnalogInput rightDriveEncoder = new AnalogInput(2);
+	public static DigitalInput rightDriveEncoder = new DigitalInput(9);
+
+	
+
+	
+
+
 
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
