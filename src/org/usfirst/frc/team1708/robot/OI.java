@@ -1,9 +1,11 @@
 package org.usfirst.frc.team1708.robot;
 
 import org.usfirst.frc.team1708.robot.commands.Climb;
+import org.usfirst.frc.team1708.robot.commands.DropGear;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
+import org.usfirst.frc.team1708.robot.commands.GearLoad;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
@@ -46,7 +48,8 @@ public class OI {
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
 	Button climber = new JoystickButton(joystickDrive, 1);
-	
+	Button gear = new JoystickButton(joystickMech, 9);
+	Button loadGear = new JoystickButton(joystickMech, 10);
 
 	public OI() {
 
@@ -88,6 +91,8 @@ public class OI {
 		
 		climber.whileHeld(new Climb());
 		
-
+		gear.whenPressed(new DropGear());
+		
+		loadGear.whenPressed(new GearLoad());
 	}
 }

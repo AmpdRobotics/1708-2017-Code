@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GearTooth;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
@@ -48,13 +49,15 @@ public class RobotMap {
 
 	public static AnalogInput shootSpeedEncoder = new AnalogInput(1);
 
-	public static DoubleSolenoid gearShifter = new DoubleSolenoid(4, 6);
+	public static DoubleSolenoid gearShifter = new DoubleSolenoid(7, 6); // no longer in use, wrong ports
 
 	public static GearTooth hallEffectSensorShooter = new GearTooth(1);
 	
 	public static DigitalInput leftDriveEncoder = new DigitalInput(8);
 	
 	public static DigitalInput rightDriveEncoder = new DigitalInput(9);
+	
+	public static Solenoid gearSolenoid = new Solenoid(4);
 
 	
 
