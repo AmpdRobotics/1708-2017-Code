@@ -64,7 +64,7 @@ public class RobotMap {
 	
 	public static Solenoid gearSolenoid = new Solenoid(4);
 	
-//	public static AnalogGyro gyro = new AnalogGyro(3);
+	public static AnalogGyro gyro = new AnalogGyro(0);
 
 	
 
