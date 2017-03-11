@@ -11,11 +11,11 @@ public class GearSub extends Subsystem {
 	
 	public void gearDrop() {
 		System.out.println(RobotMap.gearSolenoid.get());
-		RobotMap.gearSolenoid.set(false);
+		RobotMap.gearSolenoid.set(true);
 		System.out.println(RobotMap.gearSolenoid.get());
 	}
 	public void gearLoad() {
-		RobotMap.gearSolenoid.set(true);
+		RobotMap.gearSolenoid.set(false);
 	}
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
