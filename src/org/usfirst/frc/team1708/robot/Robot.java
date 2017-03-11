@@ -47,10 +47,6 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("drive to line", new AutoDriveLine());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		SmartDashboard.putNumber("left drive Encoder", RobotMap.leftDriveEncoder.getValue());
-		SmartDashboard.putNumber("right drive encoder", RobotMap.rightDriveEncoder.getValue());
-	//	RobotMap.leftDriveEncoder.resetAccumulator();
-	//	RobotMap.rightDriveEncoder.resetAccumulator();
 		CameraServer.getInstance().startAutomaticCapture();
 	}
 
