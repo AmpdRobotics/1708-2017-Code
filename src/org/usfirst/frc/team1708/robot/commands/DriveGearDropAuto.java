@@ -5,10 +5,13 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutoDriveLine extends CommandGroup {
+public class DriveGearDropAuto extends CommandGroup {
 
-	public AutoDriveLine() {
-		addSequential(new DriveForward(-.25, 500));
+	public DriveGearDropAuto() {
+		addSequential(new DriveForwardTime(-.75, 1750));
+		//addSequential(delay(500));
+		addSequential(new DropGear());
+		addSequential(new DriveForwardTime(.75, 1000));
 		// Add Commands here:
 		// e.g. addSequential(new Command1());
 		// addSequential(new Command2());

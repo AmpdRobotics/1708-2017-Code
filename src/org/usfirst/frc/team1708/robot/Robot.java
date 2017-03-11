@@ -7,7 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team1708.robot.commands.AutoDriveLine;
+import org.usfirst.frc.team1708.robot.commands.DriveGearDropAuto;
+import org.usfirst.frc.team1708.robot.commands.DriveToLineAuto;
+import org.usfirst.frc.team1708.robot.commands.SideGearAuto;
 import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
@@ -44,13 +46,12 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		chooser = new SendableChooser();
-		chooser.addObject("drive to line", new AutoDriveLine());
+		chooser.addObject("drop center gear", new DriveGearDropAuto());
+		chooser.addObject("drive to line", new DriveToLineAuto());
+		chooser.addObject("Place side gear", new SideGearAuto());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
-		SmartDashboard.putNumber("left drive Encoder", RobotMap.leftDriveEncoder.getValue());
-		SmartDashboard.putNumber("right drive encoder", RobotMap.rightDriveEncoder.getValue());
-	//	RobotMap.leftDriveEncoder.resetAccumulator();
-	//	RobotMap.rightDriveEncoder.resetAccumulator();
+		
 		CameraServer.getInstance().startAutomaticCapture();
 	}
 

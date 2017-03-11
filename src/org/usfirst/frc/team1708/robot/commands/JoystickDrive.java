@@ -24,8 +24,9 @@ public class JoystickDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.drivetrain.joystickDrive(Robot.oi.joystickDrive);
-    	System.out.println("left drive encoder" + RobotMap.leftDriveEncoder.get());
-    	System.out.println("right drive encoder" + RobotMap.rightDriveEncoder.get());
+    	System.out.println("leftDriveEncoder" + RobotMap.leftDriveEncoder.getDistance());
+    	System.out.println("RightDriveEncoder" + RobotMap.rightDriveEncoder.getDistance());
+    //	System.out.println("gyro" + RobotMap.gyro.getAngle());
     }
 
     // Make this return true when this Command no longer needs to run execute()

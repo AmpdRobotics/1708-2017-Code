@@ -1,31 +1,29 @@
 package org.usfirst.frc.team1708.robot.commands;
 
-import java.time.Clock;
-
 import org.usfirst.frc.team1708.robot.Robot;
+import org.usfirst.frc.team1708.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveForward extends Command {
-	double speed;
-	long timeInMS;
-	long startTime;
+public class DriveForwardDistance extends Command {
 
-	public DriveForward(double speed, long timeInMS) {
+	double speed;
+	double distance;
+
+	public DriveForwardDistance(double speed, double distance) {
 		requires(Robot.drivetrain);
 		this.speed = speed;
-		this.timeInMS = timeInMS;
-
+		this.distance = distance;
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		startTime = System.currentTimeMillis();
+		Robot.drivetrain.resetEncoders();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -35,15 +33,16 @@ public class DriveForward extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return timeInMS + startTime <= System.currentTimeMillis();
+		return Robot.drivetrain.getEncoderDistance() >= distance;
 	}
-
-	// Called once after isFinished returns true
-	protected void end() {
+	
+	protected void end(){
+		Robot.drivetrain.resetEncoders();
+		Robot.drivetrain.drive(0, 0);
 	}
-
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
+	
 	protected void interrupted() {
+		Robot.drivetrain.resetEncoders();
+		Robot.drivetrain.drive(0, 0);
 	}
 }
