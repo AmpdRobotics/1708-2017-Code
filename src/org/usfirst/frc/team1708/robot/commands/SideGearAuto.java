@@ -8,9 +8,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class SideGearAuto extends CommandGroup {
 
     public SideGearAuto() {
-    	addSequential(new DriveForwardDistance(-.75, 14000));
-    	addSequential(new DropGear());
-    	addSequential(new DriveForwardTime(.75, 1000));
+    	addSequential(new DriveForwardDistance(-.75,14000));
+    	//addParallel(new DropGear());
+    	addSequential(new DriveForwardTime(0,1000));
+    	addParallel(new DropGear());
+    	addParallel(new DriveBackTime(.6,1000));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
