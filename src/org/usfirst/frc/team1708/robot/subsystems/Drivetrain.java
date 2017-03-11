@@ -2,10 +2,7 @@ package org.usfirst.frc.team1708.robot.subsystems;
 
 import org.usfirst.frc.team1708.robot.RobotMap;
 import org.usfirst.frc.team1708.robot.commands.JoystickDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -26,25 +23,9 @@ public class Drivetrain extends Subsystem {
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 	}
 
-	public void gearShiftLow() {
-		RobotMap.gearShifter.set(DoubleSolenoid.Value.kForward);
-	}
-
-	public boolean inLowGear() {
-		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kForward;
-	}
-
-	public boolean inHighGear() {
-		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kReverse;
-	}
-
-	public void gearShiftHigh() {
-		RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
-	}
 	public void drive(double move, double turn) {
 		robotDrive.arcadeDrive(move, turn);
 	}
-	//public void encoderLeft
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
@@ -54,7 +35,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void initDefaultCommand() {
-		setDefaultCommand(new ShiftHighDrive());
+		setDefaultCommand(new JoystickDrive());
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
 	}

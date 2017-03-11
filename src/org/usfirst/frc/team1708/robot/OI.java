@@ -4,21 +4,14 @@ import org.usfirst.frc.team1708.robot.commands.Climb;
 import org.usfirst.frc.team1708.robot.commands.DropGear;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
-import org.usfirst.frc.team1708.robot.commands.ElevatorUp;
 import org.usfirst.frc.team1708.robot.commands.GearLoad;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
 import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
 import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
-import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftHighGear;
-import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftLowGear;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -40,8 +33,6 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	Button shiftGearHigh = new JoystickButton(joystickDrive, 3);
-	Button shiftGearDown = new JoystickButton(joystickDrive, 4);
 	Button intake = new JoystickButton(joystickMech, 5);
 	Button outtake = new JoystickButton(joystickMech, 6);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
@@ -72,9 +63,6 @@ public class OI {
 		// command
 		// until it is finished as determined by it's isFinished method.
 		// button.whenReleased(new ExampleCommand());
-		shiftGearHigh.whenPressed(new ShiftHighDrive());
-		shiftGearDown.whenPressed(new ShiftLowDrive());
-
 		elevatorUp.whileHeld(new RunAndPauseElevator());
 		elevatorUp.whenReleased(new ElevatorOff());
 
