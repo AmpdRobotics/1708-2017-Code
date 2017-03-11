@@ -2,17 +2,12 @@ package org.usfirst.frc.team1708.robot;
 
 import com.ctre.CANTalon;
 
-import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.Counter;
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GearTooth;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
-import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -50,17 +45,11 @@ public class RobotMap {
 
 	public static AnalogInput shootSpeedEncoder = new AnalogInput(1);
 
-	public static DoubleSolenoid gearShifter = new DoubleSolenoid(7, 6); // no longer in use, wrong ports
-
 	public static GearTooth hallEffectSensorShooter = new GearTooth(1);
 	
 	public static Encoder leftDriveEncoder;
 	
 	public static Encoder rightDriveEncoder;
-	
-	//leftDriveEncoder = new Encoder(8, 9, false, Encoder.EncodingType.k4x);
-	
-	//rightDriveEncoder = new Encoder(6, 7, false, Encoder.EnodingType.k4x);
 	
 	public static Solenoid gearSolenoid = new Solenoid(4);
 	
