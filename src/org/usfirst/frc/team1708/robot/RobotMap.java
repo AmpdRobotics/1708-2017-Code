@@ -2,6 +2,7 @@ package org.usfirst.frc.team1708.robot;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -37,7 +38,7 @@ public class RobotMap {
 	public static SpeedController driveFrontRightMotor = new VictorSP(ORANGE);
 	public static SpeedController driveRearRightMotor = new VictorSP(YELLOW);
 
-	public static final double HIGH_SHOT_SPEED = -.54;
+	public static final double HIGH_SHOT_SPEED = -.65;
 
 	public static SpeedController robotIntake = new CANTalon(BLUE);
 
@@ -53,11 +54,17 @@ public class RobotMap {
 
 	public static GearTooth hallEffectSensorShooter = new GearTooth(1);
 	
-	public static DigitalInput leftDriveEncoder = new DigitalInput(8);
+	public static Encoder leftDriveEncoder;
 	
-	public static DigitalInput rightDriveEncoder = new DigitalInput(9);
+	public static Encoder rightDriveEncoder;
+	
+	//leftDriveEncoder = new Encoder(8, 9, false, Encoder.EncodingType.k4x);
+	
+	//rightDriveEncoder = new Encoder(6, 7, false, Encoder.EnodingType.k4x);
 	
 	public static Solenoid gearSolenoid = new Solenoid(4);
+	
+//	public static AnalogGyro gyro = new AnalogGyro(3);
 
 	
 
