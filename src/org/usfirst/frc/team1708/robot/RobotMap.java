@@ -2,6 +2,7 @@ package org.usfirst.frc.team1708.robot;
 
 import com.ctre.CANTalon;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GearTooth;

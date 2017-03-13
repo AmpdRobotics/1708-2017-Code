@@ -14,7 +14,7 @@ public class Drivetrain extends Subsystem {
 	RobotDrive robotDrive;
 
 	public Drivetrain() {
-
+		RobotMap.gyro.initGyro();
 		robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
 				RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
@@ -34,6 +34,14 @@ public class Drivetrain extends Subsystem {
 		robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
 	}
 
+	public void resetGyro() {
+		RobotMap.gyro.reset();
+	}
+	
+	public double getGyro() {
+		return RobotMap.gyro.getAngle();
+	}
+	
 	public void initDefaultCommand() {
 		setDefaultCommand(new JoystickDrive());
 		// Set the default command for a subsystem here.
