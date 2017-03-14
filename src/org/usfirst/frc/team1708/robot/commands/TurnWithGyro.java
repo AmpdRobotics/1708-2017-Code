@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TurnWithGyro extends Command {
 	double value = 0;
-	
+	double tolerance = 0.05;
     public TurnWithGyro(double value) {
     	this.value = value;
     	requires(Robot.drivetrain);
@@ -38,7 +38,13 @@ public class TurnWithGyro extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.drivetrain.getGyro() == value;
+    	double currentValue = Robot.drivetrain.getGyro();
+        if(currentValue > 0) {
+        	return currentValue <= value + tolerance && currentValue >= value - tolerance;
+          }
+        else {
+        	return currentValue >= value + tolerance && currentValue <= value - tolerance;
+        }
     }
 
     // Called once after isFinished returns true
