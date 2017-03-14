@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1708.robot.commands.AutoDriveLine;
 import org.usfirst.frc.team1708.robot.commands.AutoTurn;
+import org.usfirst.frc.team1708.robot.commands.CenterGear;
 import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
@@ -46,6 +47,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		chooser = new SendableChooser();
 		chooser.addObject("drive to line", new AutoDriveLine());
+		chooser.addObject("place center gear", new CenterGear());
 		chooser.addObject("Auto turn", new AutoTurn());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
