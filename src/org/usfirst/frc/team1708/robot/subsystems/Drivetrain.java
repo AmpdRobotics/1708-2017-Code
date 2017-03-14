@@ -2,12 +2,9 @@ package org.usfirst.frc.team1708.robot.subsystems;
 
 import org.usfirst.frc.team1708.robot.RobotMap;
 import org.usfirst.frc.team1708.robot.commands.JoystickDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftHighDrive;
-import org.usfirst.frc.team1708.robot.commands.ShiftLowDrive;
 import edu.wpi.first.wpilibj.SensorBase;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,7 +18,7 @@ public class Drivetrain extends Subsystem {
 	RobotDrive robotDrive;
 
 	public Drivetrain() {
-
+		RobotMap.gyro.initGyro();
 		robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
 				RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
@@ -36,21 +33,6 @@ public class Drivetrain extends Subsystem {
 		RobotMap.rightDriveEncoder.setDistancePerPulse(1);
 	}
 
-	public void gearShiftLow() {
-		RobotMap.gearShifter.set(DoubleSolenoid.Value.kForward);
-	}
-
-	public boolean inLowGear() {
-		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kForward;
-	}
-
-	public boolean inHighGear() {
-		return RobotMap.gearShifter.get() == DoubleSolenoid.Value.kReverse;
-	}
-
-	public void gearShiftHigh() {
-		RobotMap.gearShifter.set(DoubleSolenoid.Value.kReverse);
-	}
 	public void drive(double move, double turn) {
 		robotDrive.arcadeDrive(move, turn);
 	}
@@ -58,6 +40,14 @@ public class Drivetrain extends Subsystem {
 	public void joystickDrive(Joystick move) {
 		//robotDrive.arcadeDrive(move.getY(), move.getZ(), true); //competition bot
 		robotDrive.arcadeDrive(move.getY(), - move.getZ(), true); //practice chassis
+	}
+
+	public void resetGyro() {
+		RobotMap.gyro.reset();
+	}
+	
+	public double getGyro() {
+		return RobotMap.gyro.getAngle();
 	}
 	
 	public void resetEncoders() {
@@ -70,8 +60,7 @@ public class Drivetrain extends Subsystem {
 	}
 	
 	public void initDefaultCommand() {
-		setDefaultCommand(new ShiftHighDrive());
-	
+		setDefaultCommand(new JoystickDrive());
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
 	}

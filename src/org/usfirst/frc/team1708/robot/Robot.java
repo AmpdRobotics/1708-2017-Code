@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc.team1708.robot.commands.AutoTurn;
+import org.usfirst.frc.team1708.robot.commands.CenterGear;
 import org.usfirst.frc.team1708.robot.commands.DriveGearDropAuto;
 import org.usfirst.frc.team1708.robot.commands.DriveToLineAuto;
 import org.usfirst.frc.team1708.robot.commands.SideGearAuto;
@@ -49,6 +51,8 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("drop center gear", new DriveGearDropAuto());
 		chooser.addObject("drive to line", new DriveToLineAuto());
 		chooser.addObject("Place side gear", new SideGearAuto());
+		chooser.addObject("place center gear", new CenterGear());
+		chooser.addObject("Auto turn", new AutoTurn());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 		
