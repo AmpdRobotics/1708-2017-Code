@@ -12,7 +12,7 @@ public class CenterGear extends CommandGroup {
     	//addSequential(new DriveForwardTime(0, 1000));
     	addSequential(new DropGear());
     	//addSequential(new DriveForwardTime(0, 1000));
-    	addSequential(new DriveForwardTime(.6, 1000));
+    	addSequential(new DriveForwardTime(.6, 1500));
     //	addSequential(new TurnWithGyro(.5));
         // Add Commands here:
         // e.g. addSequential(new Command1());
