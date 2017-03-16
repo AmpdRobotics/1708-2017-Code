@@ -8,11 +8,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class CenterGear extends CommandGroup {
 
     public CenterGear() {
-    	addSequential(new DriveForward(-.75, 2300));
-    	addSequential(new DriveForward(0, 1000));
-    	addParallel(new DropGear());
-    	addSequential(new DriveForward(0, 1000));
-    	addSequential(new DriveForward(.6, 1000));
+    	addSequential(new DriveForwardTime(-.7,2400));
+    	//addSequential(new DriveForwardTime(0, 1000));
+    	addSequential(new DropGear());
+    	//addSequential(new DriveForwardTime(0, 1000));
+    	addSequential(new DriveForwardTime(.6, 1000));
+    //	addSequential(new TurnWithGyro(.5));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

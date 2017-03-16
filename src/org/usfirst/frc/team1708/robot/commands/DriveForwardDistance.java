@@ -3,6 +3,7 @@ package org.usfirst.frc.team1708.robot.commands;
 import org.usfirst.frc.team1708.robot.Robot;
 import org.usfirst.frc.team1708.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -24,13 +25,13 @@ public class DriveForwardDistance extends Command {
 	// Called just before this Command runs the first time
 	protected void initialize() {
 		Robot.drivetrain.resetEncoders();
+		Robot.drivetrain.resetGyro();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.drivetrain.drive(speed, 0);
+		Robot.drivetrain.driveWithGyro(speed, 0);
 	}
-
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
 		return Robot.drivetrain.getEncoderDistance() >= distance;

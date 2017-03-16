@@ -12,6 +12,7 @@ public class SideGearAuto extends CommandGroup {
     	//addParallel(new DropGear());
     	addSequential(new DriveForwardTime(0,1000));
     	addParallel(new DropGear());
+    	addSequential(new DriveForwardTime(.6,500));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
