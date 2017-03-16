@@ -11,7 +11,7 @@ public class DriveGearDropAuto extends CommandGroup {
 		addSequential(new DriveForwardTime(-.75, 1750));
 		//addSequential(delay(500));
 		addSequential(new DropGear());
-		addSequential(new DriveForwardTime(.75, 1000));
+		addSequential(new DriveBackTime(.75, 1000));
 		// Add Commands here:
 		// e.g. addSequential(new Command1());
 		// addSequential(new Command2());

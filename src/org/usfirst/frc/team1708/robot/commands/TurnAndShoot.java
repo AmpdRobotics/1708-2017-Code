@@ -5,13 +5,14 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class SideGearAuto extends CommandGroup {
+public class TurnAndShoot extends CommandGroup {
 
-    public SideGearAuto() {
-    	addSequential(new DriveForwardDistance(-.7,14000));
-    	//addParallel(new DropGear());
-    	addSequential(new DriveForwardTime(0,1000));
-    	addParallel(new DropGear());
+    public TurnAndShoot() {
+    	addSequential(new SideGearAuto());
+    	addSequential(new AutoTurn());
+    	addSequential(new DriveForwardDistance(.6, 14000));
+    	addParallel(new ElevatorUp());
+    	addParallel(new ShootHigh());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

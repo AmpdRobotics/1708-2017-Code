@@ -26,11 +26,12 @@ public class DriveForwardTime extends Command {
 	// Called just before this Command runs the first time
 	protected void initialize() {
 		startTime = System.currentTimeMillis();
+		Robot.drivetrain.resetGyro();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.drivetrain.drive(speed, 0);
+		Robot.drivetrain.driveWithGyro(speed, 0);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

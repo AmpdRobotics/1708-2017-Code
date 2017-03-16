@@ -12,6 +12,7 @@ import org.usfirst.frc.team1708.robot.commands.CenterGear;
 import org.usfirst.frc.team1708.robot.commands.DriveGearDropAuto;
 import org.usfirst.frc.team1708.robot.commands.DriveToLineAuto;
 import org.usfirst.frc.team1708.robot.commands.SideGearAuto;
+import org.usfirst.frc.team1708.robot.commands.TurnAndShoot;
 import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
@@ -48,11 +49,12 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		chooser = new SendableChooser();
-		chooser.addObject("drop center gear", new DriveGearDropAuto());
+	//	chooser.addObject("drop center gear", new DriveGearDropAuto());
 		chooser.addObject("drive to line", new DriveToLineAuto());
 		chooser.addObject("Place side gear", new SideGearAuto());
 		chooser.addObject("place center gear", new CenterGear());
-		chooser.addObject("Auto turn", new AutoTurn());
+	//	chooser.addObject("Auto turn", new AutoTurn());
+		chooser.addObject("Turn and shoot auto", new TurnAndShoot());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 		
