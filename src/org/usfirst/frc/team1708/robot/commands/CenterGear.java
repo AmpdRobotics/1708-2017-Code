@@ -9,7 +9,7 @@ public class CenterGear extends CommandGroup {
 
     public CenterGear() {
     	addSequential(new DriveForwardTime(-.7,2400));
-    	//addSequential(new DriveForwardTime(0, 1000));
+    	addSequential(new DriveForwardTime(0, 1000));
     	addSequential(new DropGear());
     	//addSequential(new DriveForwardTime(0, 1000));
     	addSequential(new DriveForwardTime(.6, 1500));
