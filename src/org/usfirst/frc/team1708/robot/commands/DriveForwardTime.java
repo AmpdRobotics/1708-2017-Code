@@ -32,6 +32,8 @@ public class DriveForwardTime extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		Robot.drivetrain.driveWithGyro(speed, 0);
+
+		
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -41,6 +43,7 @@ public class DriveForwardTime extends Command {
 
 	// Called once after isFinished returns true
 	protected void end() {
+		System.out.println("encoder distance auto" + Robot.drivetrain.getEncoderDistance());
 	}
 
 	// Called when another command which requires one or more of the same
