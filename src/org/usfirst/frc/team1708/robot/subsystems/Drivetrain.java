@@ -24,9 +24,9 @@ public class Drivetrain extends Subsystem {
 		robotDrive = new RobotDrive(RobotMap.driveFrontLeftMotor, RobotMap.driveRearLeftMotor,
 				RobotMap.driveFrontRightMotor, RobotMap.driveRearRightMotor);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+//		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
-		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+//		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 		RobotMap.leftDriveEncoder = new Encoder(8, 9, false, Encoder.EncodingType.k4X);
 
 		RobotMap.rightDriveEncoder = new Encoder(6, 7, true, Encoder.EncodingType.k4X);
@@ -60,7 +60,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public double getEncoderDistance() {
-		return RobotMap.rightDriveEncoder.getDistance();
+		return RobotMap.leftDriveEncoder.getDistance();
 	}
 
 	public void driveWithGyro(double speed, double angle) {
