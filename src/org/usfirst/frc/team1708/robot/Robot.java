@@ -17,6 +17,7 @@ import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
 import org.usfirst.frc.team1708.robot.subsystems.GearSub;
+import org.usfirst.frc.team1708.robot.subsystems.GroundGearPickup;
 import org.usfirst.frc.team1708.robot.subsystems.Intake;
 import org.usfirst.frc.team1708.robot.subsystems.ShooterSub;
 
@@ -36,9 +37,9 @@ public class Robot extends IterativeRobot {
 	public static Intake intake = new Intake();
 	public static ShooterSub shooter = new ShooterSub();
 	public static ClimberSub climber = new ClimberSub();
-	public static GearSub gearDropper = new GearSub();
+	public static GroundGearPickup gearPickup = new GroundGearPickup();
 	public static OI oi;
-
+	
 	Command autonomousCommand;
 	SendableChooser chooser;
 

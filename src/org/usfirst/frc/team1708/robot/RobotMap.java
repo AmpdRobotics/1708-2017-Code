@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.GearTooth;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.TalonSRX;
 import edu.wpi.first.wpilibj.VictorSP;
 
 /**
@@ -36,7 +37,7 @@ public class RobotMap {
 
 	public static final double HIGH_SHOT_SPEED = -.65;
 
-	public static SpeedController robotIntake = new CANTalon(BLUE);
+	//public static SpeedController robotIntake = new CANTalon(BLUE);
 
 	public static SpeedController elevatorMotor = new CANTalon(WHITE);
 
@@ -55,8 +56,8 @@ public class RobotMap {
 	public static Solenoid gearSolenoid = new Solenoid(4);
 	
 	public static AnalogGyro gyro = new AnalogGyro(0);
-
 	
+	public static SpeedController gearIntakeMotor = new TalonSRX(BLUE); //veryify port later
 
 	
 
