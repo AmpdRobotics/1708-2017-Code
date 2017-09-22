@@ -37,6 +37,8 @@ public class OI {
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
 	Button gearIntakeOn = new JoystickButton(joystickMech, 2);
+	Button gearOuttakeOn=new JoystickButton(joystickMech,5);
+	
 	// Button gearCollectorSwitch = new JoystickButton(joystickMech, 3);
 	Button gearCollectorUp = new JoystickButton(joystickMech, 3);
 	Button gearCollectorDown = new JoystickButton(joystickMech, 4);
