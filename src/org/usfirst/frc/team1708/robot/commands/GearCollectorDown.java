@@ -8,15 +8,18 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class GearCollectorDown extends Command {
-
+	long startTime;
 	public GearCollectorDown() {
+			
 		requires(Robot.gearPickup);
+	
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+		 startTime = System.currentTimeMillis();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -26,7 +29,7 @@ public class GearCollectorDown extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return false;
+		return 1000 + startTime <= System.currentTimeMillis();
 	}
 
 	// Called once after isFinished returns true
