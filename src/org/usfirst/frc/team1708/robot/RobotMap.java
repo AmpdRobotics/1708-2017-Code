@@ -57,7 +57,7 @@ public class RobotMap {
 	
 	public static AnalogGyro gyro = new AnalogGyro(0);
 	
-	public static SpeedController gearIntakeMotor = new TalonSRX(BLUE); //veryify port later
+	public static SpeedController gearIntakeMotor = new CANTalon(BLUE); //veryify port later
 
 	
 

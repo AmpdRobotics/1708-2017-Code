@@ -22,11 +22,11 @@ public class GroundGearPickup extends Subsystem {
 	}
 
 	public void gearCollectorUp() {
-		RobotMap.gearSolenoid.set(true);
+		RobotMap.gearSolenoid.set(false);
 	}
 
 	public void gearCollectorDown() {
-		RobotMap.gearSolenoid.set(false);
+		RobotMap.gearSolenoid.set(true);
 	}
 
 	public void initDefaultCommand() {

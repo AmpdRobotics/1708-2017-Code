@@ -6,6 +6,7 @@ import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorDown;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorIntake;
+import org.usfirst.frc.team1708.robot.commands.GearCollectorOuttake;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorUp;
 import org.usfirst.frc.team1708.robot.commands.GearLoad;
 import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
@@ -36,12 +37,12 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	Button gearIntakeOn = new JoystickButton(joystickMech, 2);
+	Button gearIntakeOn = new JoystickButton(joystickMech, 6);
 	Button gearOuttakeOn=new JoystickButton(joystickMech,5);
 	
 	// Button gearCollectorSwitch = new JoystickButton(joystickMech, 3);
-	Button gearCollectorUp = new JoystickButton(joystickMech, 3);
-	Button gearCollectorDown = new JoystickButton(joystickMech, 4);
+	Button gearCollectorUp = new JoystickButton(joystickMech, 4);
+	Button gearCollectorDown = new JoystickButton(joystickMech, 3);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
@@ -77,6 +78,7 @@ public class OI {
 		shootHigh.whileHeld(new ShootHigh());
 
 		gearIntakeOn.whileHeld(new GearCollectorIntake());
+		gearOuttakeOn.whileHeld(new GearCollectorOuttake());
 		gearCollectorUp.whenPressed(new GearCollectorUp());
 		gearCollectorDown.whenPressed(new GearCollectorDown());
 		
