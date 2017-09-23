@@ -9,11 +9,17 @@ public class CenterGear extends CommandGroup {
 
     public CenterGear() {
     	addSequential(new DriveForwardTime(-.7, 2400));
+    	System.out.println("drive forward");
     	addSequential(new DriveForwardTime(0, 500));
+    	System.out.println("stop");
     	addSequential(new GearCollectorDown());
+    	System.out.println("down");
     	addSequential(new DriveForwardTime(0, 1500));
-    	addParallel(new GearCollectorOuttake());
+    	System.out.println("stop");
+    	addParallel(new GearCollectorIntake());
     	addParallel(new DriveForwardTime(.6, 1500));
+    	System.out.println("out and back");
+    	
     //	addSequential(new TurnWithGyro(.5));
         // Add Commands here:
         // e.g. addSequential(new Command1());
