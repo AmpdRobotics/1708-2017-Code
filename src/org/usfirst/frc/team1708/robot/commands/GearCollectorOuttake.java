@@ -7,10 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class OuttakeCommand extends Command {
+public class GearCollectorOuttake extends Command {
 
-    public OuttakeCommand() {
-    	requires(Robot.intake);
+    public GearCollectorOuttake() {
+    	requires (Robot.gearPickup);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,7 +21,7 @@ public class OuttakeCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.intake.outtakeBall();
+    	Robot.gearPickup.gearOuttake();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -31,12 +31,12 @@ public class OuttakeCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.intake.intakeDisable();
+    	Robot.gearPickup.gearIntakeOff();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.intake.intakeDisable();
+    	Robot.gearPickup.gearIntakeOff();
     }
 }

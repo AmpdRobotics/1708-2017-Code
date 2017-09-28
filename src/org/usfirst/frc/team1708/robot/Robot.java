@@ -9,15 +9,13 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1708.robot.commands.AutoTurn;
 import org.usfirst.frc.team1708.robot.commands.CenterGear;
-import org.usfirst.frc.team1708.robot.commands.DriveGearDropAuto;
 import org.usfirst.frc.team1708.robot.commands.DriveToLineAuto;
 import org.usfirst.frc.team1708.robot.commands.SideGearAuto;
 import org.usfirst.frc.team1708.robot.commands.TurnAndShoot;
 import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
-import org.usfirst.frc.team1708.robot.subsystems.GearSub;
-import org.usfirst.frc.team1708.robot.subsystems.Intake;
+import org.usfirst.frc.team1708.robot.subsystems.GroundGearPickup;
 import org.usfirst.frc.team1708.robot.subsystems.ShooterSub;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -33,12 +31,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain = new Drivetrain();
 	public static ElevatorSub elevator = new ElevatorSub();
-	public static Intake intake = new Intake();
 	public static ShooterSub shooter = new ShooterSub();
 	public static ClimberSub climber = new ClimberSub();
-	public static GearSub gearDropper = new GearSub();
+	public static GroundGearPickup gearPickup = new GroundGearPickup();
 	public static OI oi;
-
+	
 	Command autonomousCommand;
 	SendableChooser chooser;
 
@@ -87,7 +84,7 @@ public class Robot extends IterativeRobot {
 	 */
 	public void autonomousInit() {
 		autonomousCommand = (Command) chooser.getSelected();
-		Robot.gearDropper.gearLoad();
+		Robot.gearPickup.gearCollectorUp();
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
 		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
@@ -114,7 +111,7 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
-		Robot.gearDropper.gearLoad();
+		Robot.gearPickup.gearCollectorUp();
 	}
 
 	/**

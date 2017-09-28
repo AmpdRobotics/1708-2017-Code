@@ -7,38 +7,37 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DropGear extends Command {
-	long startTime;
+public class GearCollectorIntake extends Command {
 
-	public DropGear() {
-//		requires(Robot.gearDropper);
+	public GearCollectorIntake() {
+		requires(Robot.gearPickup);
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		startTime = System.currentTimeMillis();
+
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-//		Robot.gearDropper.gearDrop();
+		Robot.gearPickup.gearIntake();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return 1000 + startTime <= System.currentTimeMillis();
+		return false;
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-//		Robot.gearDropper.gearDrop();
+		Robot.gearPickup.gearIntakeOff();
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted() {
-//		Robot.gearDropper.gearDrop();
+		Robot.gearPickup.gearIntakeOff();
 	}
 }

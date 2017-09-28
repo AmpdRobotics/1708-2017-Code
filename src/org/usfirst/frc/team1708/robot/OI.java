@@ -1,13 +1,12 @@
 package org.usfirst.frc.team1708.robot;
 
 import org.usfirst.frc.team1708.robot.commands.Climb;
-import org.usfirst.frc.team1708.robot.commands.DropGear;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
-import org.usfirst.frc.team1708.robot.commands.GearLoad;
-import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
-import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
-import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
+import org.usfirst.frc.team1708.robot.commands.GearCollectorDown;
+import org.usfirst.frc.team1708.robot.commands.GearCollectorIntake;
+import org.usfirst.frc.team1708.robot.commands.GearCollectorOuttake;
+import org.usfirst.frc.team1708.robot.commands.GearCollectorUp;
 import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
@@ -33,14 +32,15 @@ public class OI {
 	// commands the same as any other Button.
 	public Joystick joystickDrive = new Joystick(0);
 	public Joystick joystickMech = new Joystick(1);
-	Button intake = new JoystickButton(joystickMech, 5);
-	Button outtake = new JoystickButton(joystickMech, 6);
+	Button gearIntakeOn = new JoystickButton(joystickMech, 6);
+	Button gearOuttakeOn=new JoystickButton(joystickMech,5);
+	
+	Button gearCollectorUp = new JoystickButton(joystickMech, 4);
+	Button gearCollectorDown = new JoystickButton(joystickMech, 3);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);
 	Button elevatorDown = new JoystickButton(joystickMech, 8);
 	Button shootHigh = new JoystickButton(joystickMech, 1);
 	Button climber = new JoystickButton(joystickDrive, 1);
-	Button gear = new JoystickButton(joystickMech, 2);
-	Button loadGear = new JoystickButton(joystickMech, 3);
 
 	public OI() {
 
@@ -71,16 +71,12 @@ public class OI {
 
 		shootHigh.whileHeld(new ShootHigh());
 
-		intake.whileHeld(new IntakeCommand());
-		intake.whenReleased(new IntakeOffCommand());
-
-		outtake.whileHeld(new OuttakeCommand());
-		outtake.whenReleased(new IntakeOffCommand());
+		gearIntakeOn.whileHeld(new GearCollectorIntake());
+		gearOuttakeOn.whileHeld(new GearCollectorOuttake());
+		gearCollectorUp.whenPressed(new GearCollectorUp());
+		gearCollectorDown.whenPressed(new GearCollectorDown());
 		
 		climber.whileHeld(new Climb());
-		
-		gear.whenPressed(new DropGear());
-		
-		loadGear.whenPressed(new GearLoad());
+
 	}
 }
