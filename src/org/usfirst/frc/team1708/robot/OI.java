@@ -1,17 +1,12 @@
 package org.usfirst.frc.team1708.robot;
 
 import org.usfirst.frc.team1708.robot.commands.Climb;
-import org.usfirst.frc.team1708.robot.commands.DropGear;
 import org.usfirst.frc.team1708.robot.commands.ElevatorDown;
 import org.usfirst.frc.team1708.robot.commands.ElevatorOff;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorDown;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorIntake;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorOuttake;
 import org.usfirst.frc.team1708.robot.commands.GearCollectorUp;
-import org.usfirst.frc.team1708.robot.commands.GearLoad;
-import org.usfirst.frc.team1708.robot.commands.IntakeCommand;
-import org.usfirst.frc.team1708.robot.commands.IntakeOffCommand;
-import org.usfirst.frc.team1708.robot.commands.OuttakeCommand;
 import org.usfirst.frc.team1708.robot.commands.RunAndPauseElevator;
 import org.usfirst.frc.team1708.robot.commands.ShootHigh;
 
@@ -40,7 +35,6 @@ public class OI {
 	Button gearIntakeOn = new JoystickButton(joystickMech, 6);
 	Button gearOuttakeOn=new JoystickButton(joystickMech,5);
 	
-	// Button gearCollectorSwitch = new JoystickButton(joystickMech, 3);
 	Button gearCollectorUp = new JoystickButton(joystickMech, 4);
 	Button gearCollectorDown = new JoystickButton(joystickMech, 3);
 	Button elevatorUp = new JoystickButton(joystickMech, 7);

@@ -9,16 +9,13 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1708.robot.commands.AutoTurn;
 import org.usfirst.frc.team1708.robot.commands.CenterGear;
-import org.usfirst.frc.team1708.robot.commands.DriveGearDropAuto;
 import org.usfirst.frc.team1708.robot.commands.DriveToLineAuto;
 import org.usfirst.frc.team1708.robot.commands.SideGearAuto;
 import org.usfirst.frc.team1708.robot.commands.TurnAndShoot;
 import org.usfirst.frc.team1708.robot.subsystems.ClimberSub;
 import org.usfirst.frc.team1708.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1708.robot.subsystems.ElevatorSub;
-import org.usfirst.frc.team1708.robot.subsystems.GearSub;
 import org.usfirst.frc.team1708.robot.subsystems.GroundGearPickup;
-import org.usfirst.frc.team1708.robot.subsystems.Intake;
 import org.usfirst.frc.team1708.robot.subsystems.ShooterSub;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -34,7 +31,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain = new Drivetrain();
 	public static ElevatorSub elevator = new ElevatorSub();
-	public static Intake intake = new Intake();
 	public static ShooterSub shooter = new ShooterSub();
 	public static ClimberSub climber = new ClimberSub();
 	public static GroundGearPickup gearPickup = new GroundGearPickup();
